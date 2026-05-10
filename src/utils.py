@@ -1,6 +1,3 @@
-"""
-Utility functions for padel shot classification system
-"""
 import cv2
 import numpy as np
 from typing import Tuple, List, Dict
