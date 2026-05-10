@@ -1,0 +1,16 @@
+{
+  "metadata": {
+    "total_shots": 1,
+    "video_info": "Padel match analysis"
+  },
+  "shots": [
+    {
+      "shot_id": 1,
+      "frame_number": 940,
+      "timestamp": 37.6,
+      "shot_type": "smash",
+      "confidence": 0.85,
+      "player_id": -1
+    }
+  ]
+}
