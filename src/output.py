@@ -1,6 +1,3 @@
-"""
-Output generation and data storage
-"""
 import json
 import csv
 from typing import List, Dict, Any
