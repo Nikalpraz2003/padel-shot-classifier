@@ -1,6 +1,3 @@
-"""
-Main processing pipeline for padel shot classification
-"""
 import cv2
 import numpy as np
 import logging
