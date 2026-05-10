@@ -1,29 +1,16 @@
-"""
-Demo script - Example usage of the Padel Shot Classification System
-"""
 
 import cv2
 import os
 import sys
 from pathlib import Path
 
-# ==============================================================================
-# WINDOWS COMPATIBILITY FIXES (Place before other imports)
-# ==============================================================================
-
-# 1. Fix for "AttributeError: module 'cv2' has no attribute 'setNumThreads'"
-# This happens with some Windows builds of OpenCV-Headless.
 if not hasattr(cv2, 'setNumThreads'):
     def dummy_set_threads(n):
         pass
     cv2.setNumThreads = dummy_set_threads
 
-# 2. DLL Path Fix for Microsoft Store Python
-# Ensures system libraries are visible to the interpreter.
 if sys.platform == 'win32':
     os.add_dll_directory(r'C:\Windows\System32')
-
-# ==============================================================================
 
 from src.main import PadelShotAnalyzer
 
@@ -79,10 +66,8 @@ def demo_image_analysis(image_path: str):
 
 if __name__ == "__main__":
     
-    # Default sample path based on your current project structure
     sample_video = "data/infernce_sample_video.mp4"
     
-    # Check if a custom path was provided via command line, otherwise use sample
     video_path = sys.argv[1] if len(sys.argv) > 1 else sample_video
 
     if Path(video_path).exists():
