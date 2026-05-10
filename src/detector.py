@@ -1,6 +1,3 @@
-"""
-Object detection using YOLO
-"""
 import cv2
 import numpy as np
 from typing import List, Tuple, Dict, Optional
@@ -125,7 +122,6 @@ class ObjectDetector:
         # Combine masks
         mask = cv2.bitwise_or(mask_yellow, mask_green)
         
-        # Morphological operations to clean up
         kernel = cv2.getStructuringElement(cv2.MORPH_ELLIPSE, (5, 5))
         mask = cv2.morphologyEx(mask, cv2.MORPH_CLOSE, kernel)
         mask = cv2.morphologyEx(mask, cv2.MORPH_OPEN, kernel)
@@ -137,8 +133,6 @@ class ObjectDetector:
         for contour in contours:
             area = cv2.contourArea(contour)
             
-            # Filter by size (balls should have a minimum size)
-            # Balls in a 1920x1080 video are typically 10-100 pixels in area
             if area < 10 or area > 500:
                 continue
             
