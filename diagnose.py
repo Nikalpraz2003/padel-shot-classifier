@@ -1,13 +1,8 @@
-"""
-Diagnostic script to check what YOLO is detecting in the video
-"""
-
 import cv2
 import sys
 from pathlib import Path
 from collections import defaultdict
 
-# Windows compatibility
 if sys.platform == 'win32':
     import os
     os.add_dll_directory(r'C:\Windows\System32')
