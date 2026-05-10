@@ -1,6 +1,3 @@
-"""
-Shot classification logic
-"""
 import numpy as np
 from typing import List, Tuple, Dict, Optional
 import logging
